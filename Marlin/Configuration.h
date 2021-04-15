@@ -70,8 +70,17 @@
 
 // @section info
 
+// Uses this as base version.
+// https://github.com/makerbase-mks/MKS-SGEN_L-V2/blob/master/Firmware/Marlin-bugfix-2.0.x-MKS%20TS35%2BSGEN_L%20V2/Marlin-bugfix-2.0.x.rar
+// Add config from
+// https://www.thingiverse.com/thing:4294049
+
+// Screen https://github.com/makerbase-mks/MKS-SGEN_L-V2/wiki/MKS_TS35
+// Board https://fr.aliexpress.com/item/4001283346331.html?spm=a2g0o.store_home.slider_165457030.0
+// Board https://github.com/makerbase-mks/MKS-SGEN_L-V2
+
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Ldesign Media" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
