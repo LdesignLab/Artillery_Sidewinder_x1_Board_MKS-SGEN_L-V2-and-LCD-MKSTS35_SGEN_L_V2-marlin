@@ -77,11 +77,12 @@
 // Board https://fr.aliexpress.com/item/4001283346331.html?spm=a2g0o.store_home.slider_165457030.0
 // Board https://github.com/makerbase-mks/MKS-SGEN_L-V2
 // Board https://github.com/makerbase-mks/MKS-SGEN_L-V2/wiki?spm=a2g0o.detail.1000023.17.2ecf3865uBLgBd
+// BLTOUCH https://github.com/makerbase-mks/MKS-SGEN_L-V2/wiki/3D_TOUCH
 
 // Marlin 2.0 Bugfix Branch (Januari 2021)
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "Ldesign Media" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Ldesign Media v1.01" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
