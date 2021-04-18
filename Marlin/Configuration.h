@@ -76,11 +76,13 @@
 // Screen https://github.com/makerbase-mks/MKS-SGEN_L-V2/wiki/MKS_TS35
 // Board https://fr.aliexpress.com/item/4001283346331.html?spm=a2g0o.store_home.slider_165457030.0
 // Board https://github.com/makerbase-mks/MKS-SGEN_L-V2
+// Board https://github.com/makerbase-mks/MKS-SGEN_L-V2/wiki?spm=a2g0o.detail.1000023.17.2ecf3865uBLgBd
+// BLTOUCH https://github.com/makerbase-mks/MKS-SGEN_L-V2/wiki/3D_TOUCH
 
 // Marlin 2.0 Bugfix Branch (Januari 2021)
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "Ldesign Media" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Ldesign Media v1.01" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -845,6 +847,8 @@
  *   M204 P    Acceleration
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
+ *
+ * DEFAULT_ACCELERATION,DEFAULT_RETRACT_ACCELERATION,DEFAULT_TRAVEL_ACCELERATION   3000
  */
 #define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  800    // E acceleration for retracts
@@ -931,7 +935,7 @@
  *      - normally-closed switches to GND and D32.
  *      - normally-open switches to 5V and D32.
  */
-#define Z_MIN_PROBE_PIN 19 // Pin 32 is the RAMPS default
+//#define Z_MIN_PROBE_PIN 19 // Pin 32 is the RAMPS default
 
 /**
  * Probe Type
@@ -1399,7 +1403,7 @@
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
 //#define AUTO_BED_LEVELING_BILINEAR
-//#define AUTO_BED_LEVELING_UBL
+#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
 /**
@@ -2747,7 +2751,7 @@
  * Set this manually if there are extra servos needing manual control.
  * Set to 0 to turn off servo support.
  */
-//#define NUM_SERVOS 3 // Servo index starts with 0 for M280 command
+#define NUM_SERVOS 1 // Servo index starts with 0 for M280 command
 
 // (ms) Delay  before the next move will start, to give the servo time to reach its target angle.
 // 300ms is a good value but you can try less delay.
