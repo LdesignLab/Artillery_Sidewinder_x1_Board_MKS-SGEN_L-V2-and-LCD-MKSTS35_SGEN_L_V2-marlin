@@ -819,8 +819,8 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-//#define DEFAULT_MAX_FEEDRATE          { 200, 200, 20, 40 }                     // DIGA-Tech: decreased values
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 50, 40 }                     // Artillery: default values
+#define DEFAULT_MAX_FEEDRATE          { 200, 200, 20, 40 }                     // DIGA-Tech: decreased values
+//#define DEFAULT_MAX_FEEDRATE          { 300, 300, 50, 40 }                     // Artillery: default values
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -851,7 +851,8 @@
  * DEFAULT_ACCELERATION,DEFAULT_RETRACT_ACCELERATION,DEFAULT_TRAVEL_ACCELERATION   3000
  */
 #define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  800    // E acceleration for retracts
+//#define DEFAULT_ACCELERATION          800     // X, Y, Z and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  10000   // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   2000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
