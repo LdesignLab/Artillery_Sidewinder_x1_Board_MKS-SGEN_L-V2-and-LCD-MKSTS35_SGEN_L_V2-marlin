@@ -134,7 +134,7 @@ void GcodeSuite::M48() {
 
   // Move to the first point, deploy, and probe
   const float t = probe.probe_at_point(test_position, raise_after, verbose_level);
-  bool probing_good = !ISNAN(t);
+  bool probing_good = !isnan(t);
 
   if (probing_good) {
     randomSeed(millis());
@@ -162,7 +162,7 @@ void GcodeSuite::M48() {
           #endif
         );
         if (verbose_level > 3) {
-          SERIAL_ECHOPAIR("Start radius:", radius, " angle:", angle, " dir:");
+          SERIAL_ECHOPGM("Start radius:", radius, " angle:", angle, " dir:");
           if (dir > 0) SERIAL_CHAR('C');
           SERIAL_ECHOLNPGM("CW");
         }
@@ -200,7 +200,7 @@ void GcodeSuite::M48() {
             while (!probe.can_reach(next_pos)) {
               next_pos *= 0.8f;
               if (verbose_level > 3)
-                SERIAL_ECHOLNPAIR_P(PSTR("Moving inward: X"), next_pos.x, SP_Y_STR, next_pos.y);
+                SERIAL_ECHOLNPGM_P(PSTR("Moving inward: X"), next_pos.x, SP_Y_STR, next_pos.y);
             }
           #elif HAS_ENDSTOPS
             // For a rectangular bed just keep the probe in bounds
@@ -209,7 +209,7 @@ void GcodeSuite::M48() {
           #endif
 
           if (verbose_level > 3)
-            SERIAL_ECHOLNPAIR_P(PSTR("Going to: X"), next_pos.x, SP_Y_STR, next_pos.y);
+            SERIAL_ECHOLNPGM_P(PSTR("Going to: X"), next_pos.x, SP_Y_STR, next_pos.y);
 
           do_blocking_move_to_xy(next_pos);
         } // n_legs loop
@@ -219,7 +219,7 @@ void GcodeSuite::M48() {
       const float pz = probe.probe_at_point(test_position, raise_after, 0);
 
       // Break the loop if the probe fails
-      probing_good = !ISNAN(pz);
+      probing_good = !isnan(pz);
       if (!probing_good) break;
 
       // Store the new sample
@@ -241,7 +241,7 @@ void GcodeSuite::M48() {
 
       if (verbose_level > 1) {
         SERIAL_ECHO(n + 1);
-        SERIAL_ECHOPAIR(" of ", n_samples);
+        SERIAL_ECHOPGM(" of ", n_samples);
         SERIAL_ECHOPAIR_F(": z: ", pz, 3);
         SERIAL_CHAR(' ');
         dev_report(verbose_level > 2, mean, sigma, min, max);
